@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <h1>Report</h1>
+    <table class="table table-striped">
+        <tr>
+            <th>WAREHOUSE</th>
+            <th>PRODUCT</th>
+            <th>QUANTITY</th>
+        </tr>
+    {% for r in result %}
+    <tr>
+        <td>{{r.1}}</td>
+        <td>{{r.0}}</td>
+        <td>{{r.2}}</td>
+    </tr> 
+    {% endfor %}
+    </table>
+    
+{% endblock %}

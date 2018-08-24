@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <h1>Locations</h1>
+    <table class="table table-striped">
+    {% for location in locations %}
+    <tr>
+        <td><h3><span class="label label-default">LocationID</span> {{location.location_id}}</h3></td>
+        <td><h3><span class="label label-default">Warehouse</span> {{location.lname}}</h3></td>
+        <td>
+            <a href="edit_location/{{location.location_id}}" class="btn btn-default pull-right">Edit</a>
+        </td>
+        <td>
+            <form action="{{url_for('location.delete_location', id=location.location_id)}}" method="post">
+                <input type="hidden" value="DELETE" name="_method">
+                <input type="submit" value="Delete" class="btn btn-danger">
+            </form>
+        </td>
+    </tr> 
+    {% endfor %}
+    </table>
+    <a class="btn btn-success" href="/add_location"> Add Location</a>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <h1>Movements</h1>
+    <table class="table table-striped">
+    {% for movement in movements %}
+    <tr>
+        <td><span class="label label-default">MovementID</span> {{movement.movement_id}}</td>
+        <td><span class="label label-default">Timestamp</span> {{movement.timestamp}}</td>
+        <td><span class="label label-default">From</span> {{movement.from_loc}}</td>
+        <td><span class="label label-default">To</span> {{movement.to_loc}}</td>
+        <td><span class="label label-default">PRODUCT</span> {{movement.product_id}}</td>
+        <td><span class="label label-default">QUANTITY</span> {{movement.qty}}</td>     
+        <td>
+            <a href="edit_movement/{{movement.movement_id}}" class="btn btn-default pull-right">Edit</a>
+        </td>
+    </tr> 
+    {% endfor %}
+    </table>
+    <a class="btn btn-success" href="/move_product" style="margin-bottom:15px" > Move Prodcut</a>
+
+{% endblock %}
