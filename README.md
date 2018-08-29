@@ -8,7 +8,7 @@ This is Inventory application build on python flask framework
 ![](screenshots/ViewLocation.png)
 
 ### Add/Edit/View Product Page:
-![](ViewProduct/ViewProduct.png)
+![](screenshots/ViewProduct.png)
 
 ### Movement View Page:
 ![](screenshots/movement.png)
